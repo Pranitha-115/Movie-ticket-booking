@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>🎬 MyShow</h1></header>
+
+  <!-- Step 1: Movies section -->
+  <section id="movies-section">
+    <h2>Now Showing</h2>
+    <div id="movies" class="movies"></div>
+  </section>
+
+  <!-- Step 2: Show time + seats -->
+  <section id="booking-section" class="hidden">
+    <button id="back-btn">← Back</button>
+    <h2 id="movie-title"></h2>
+
+    <label>Show time:
+      <select id="showtime">
+        <option>10:00 AM</option>
+        <option>1:30 PM</option>
+        <option>6:00 PM</option>
+        <option>9:30 PM</option>
+      </select>
+    </label>
+
+    <div class="screen">SCREEN THIS WAY</div>
+    <div id="seats" class="seats"></div>
+
+    <div class="legend">
+      <span class="box"></span> Available
+      <span class="box selected"></span> Selected
+      <span class="box booked"></span> Booked
+    </div>
+
+    <p>Seats: <b id="selected-seats">None</b></p>
+    <p>Total: ₹<b id="total">0</b></p>
+    <button id="book-btn">Book Tickets</button>
+  </section>
+
+  <!-- Step 3: Confirmation -->
+  <section id="ticket-section" class="hidden">
+    <div class="ticket">
+      <h2>✅ Booking Confirmed</h2>
+      <p><b>Movie:</b> <span id="t-movie"></span></p>
+      <p><b>Time:</b> <span id="t-time"></span></p>
+      <p><b>Seats:</b> <span id="t-seats"></span></p>
+      <p><b>Paid:</b> ₹<span id="t-total"></span></p>
+      <p><b>Booking ID:</b> <span id="t-id"></span></p>
+      <button id="home-btn">Book Another</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

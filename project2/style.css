@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+}
+header h1 { margin: 0; font-size: 22px; }
+
+section { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+.hidden { display: none; }
+
+/* Movie cards */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+.movie {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+}
+.movie .poster {
+  height: 240px;
+  background-color: #f84464;   /* shows if image is missing */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.movie .info { padding: 10px; }
+.movie .info h3 { margin: 0 0 4px; font-size: 16px; }
+.movie .info p { margin: 0; font-size: 13px; color: #666; }
+
+/* Seats */
+.screen {
+  background: #ccc;
+  text-align: center;
+  padding: 6px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 0 0 40px 40px;
+  font-size: 12px;
+}
+.seats {
+  display: grid;
+  grid-template-columns: repeat(8, 36px);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.seat {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #28a745;
+  border-radius: 6px 6px 3px 3px;
+  background: #fff;
+  font-size: 11px;
+  cursor: pointer;
+}
+.seat.selected { background: #f84464; border-color: #f84464; color: #fff; }
+.seat.booked { background: #bbb; border-color: #bbb; cursor: not-allowed; }
+
+.legend { text-align: center; font-size: 13px; margin-bottom: 12px; }
+.box {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #28a745;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 4px 0 12px;
+}
+.box.selected { background: #f84464; border-color: #f84464; }
+.box.booked { background: #bbb; border-color: #bbb; }
+
+button {
+  background: #f84464;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:disabled { opacity: .5; cursor: not-allowed; }
+select { padding: 6px; font-size: 15px; }
+
+/* Ticket */
+.ticket {
+  background: #fff;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  border-top: 6px solid #f84464;
+}
